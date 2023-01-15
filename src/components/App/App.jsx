@@ -10,10 +10,10 @@ function App() {
   let [imageList, setImageList] = useState([])
 
   useEffect(()=>{
-  getImages()
+  fetchData()
 },[])
 
-const getImages = () => {
+const fetchData = () => {
   axios.get('/gallery')
     .then(response => {
       setImageList(response.data)
@@ -27,7 +27,7 @@ const getImages = () => {
       <div className="App">
         
         <Header/>
-        <GalleryList imageList={imageList} getImages={getImages}/>
+        <GalleryList imageList={imageList} fetchData={fetchData}/>
         
       </div>
     );

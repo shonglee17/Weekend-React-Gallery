@@ -1,12 +1,20 @@
 import GalleryItem from './GalleryItem'
 
-function GalleryList({imageList, getImages}){    
+function GalleryList({imageList, fetchData}){    
     return(
         <>
         
-            {imageList.map((thaco)=>{
+            {imageList.map((data)=>{
                 return (
-                <GalleryItem key={thaco.id} path={thaco.path} description={thaco.description} likes={thaco.likes} getImages={getImages} />
+                    
+                    <GalleryItem  
+                        key={data.id}
+                        id={data.id}
+                        path={data.path} 
+                        description={data.description} 
+                        likes={data.likes} 
+                        fetchData={fetchData}
+                    />
                 )
             })}
         
