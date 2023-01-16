@@ -23,10 +23,10 @@ function GalleryItem({ id, path, description, likes, fetchData }) {
   return (
     <>
       <span>
-        <div onClick={() => toggleHiding(id)}>
+        <div>
           {!isHiding ? (
             <>
-              <img src={path}></img>
+              <img src={path} onClick={() => toggleHiding(id)}></img>
               {likes}
               <button onClick={() => addLike(id)}>Like</button>
             </>
